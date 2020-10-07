@@ -1957,6 +1957,10 @@
   #define HAS_FILAMENT_WIDTH_SENSOR 1
 #endif
 
+#if PIN_EXISTS(MKSPWC30)// MKS PWC 3.0 Power button switch.
+  #define HAS_MKSPWC30 1
+#endif
+
 // User Interface
 #if PIN_EXISTS(HOME)
   #define HAS_HOME 1

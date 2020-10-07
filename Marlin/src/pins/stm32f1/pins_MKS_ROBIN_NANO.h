@@ -125,13 +125,13 @@
 //
 //#define POWER_LOSS_PIN                      PA2  // PW_DET
 #define PS_ON_PIN                           PB2   // PW_OFF Pin for switch on/swich off power supply by M80/M81
-//#define MKSPWC30_PIN                        PA2   // MKS PWC 3.0 PW-DET signal. You can use Power Button to send M80/M81 command (main power supply ON/OFF)
+#define MKSPWC30_PIN                        PA2   // MKS PWC 3.0 PW-DET signal. You can use Power Button to send M80/M81 command (main power supply ON/OFF)
 
 //#define SUICIDE_PIN                       PB2   // Enable MKSPWC support ROBIN NANO v1.2 ONLY
 //#define SUICIDE_PIN_INVERTING            false
 
-#define KILL_PIN                          PA2   // Enable MKSPWC support ROBIN NANO v1.2 ONLY
-#define KILL_PIN_INVERTING                false  // Enable MKSPWC support ROBIN NANO v1.2 ONLY
+//#define KILL_PIN                          PA2   // Enable MKSPWC support ROBIN NANO v1.2 ONLY
+//#define KILL_PIN_INVERTING                false  // Enable MKSPWC support ROBIN NANO v1.2 ONLY
 
 #define SERVO0_PIN                          PA8   // Enable BLTOUCH support ROBIN NANO v1.2 ONLY
 

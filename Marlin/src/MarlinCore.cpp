@@ -538,6 +538,27 @@ inline void manage_inactivity(const bool ignore_stepper_queue=false) {
     }
   #endif
 
+#if HAS_MKSPWC30 // MKS PWC 3.0 Power button switch (and USB power jumper enabled).
+    static int customCount1 = 0;
+    const int MKSPWC30_DELAY = 2000;
+    if (READ(MKSPWC30_PIN))
+      customCount1++;
+    else
+      customCount1 = 0;
+    if (customCount1 == MKSPWC30_DELAY) {
+        if (!powersupply_on) {
+              ui.quick_feedback();
+             queue.enqueue_now_P(PSTR("M80")); //Power on
+        }
+        else
+        {
+               ui.quick_feedback();
+              queue.enqueue_now_P(PSTR("M81")); //Power off
+        }
+       
+      }
+  #endif
+
   #if HAS_KILL
 
     // Check if the kill button was pressed and wait just in case it was an accidental
@@ -1147,6 +1168,10 @@ void setup() {
 
   #if EITHER(Z_PROBE_SLED, SOLENOID_PROBE) && HAS_SOLENOID_1
     OUT_WRITE(SOL1_PIN, LOW); // OFF
+  #endif
+
+  #if HAS_MKSPWC30  //// MKS PWC 3.0 Power button switch (and USB power enabled).
+     SET_INPUT_PULLUP(MKSPWC30_PIN); //PW DET PIN pullup. Switching by GND to PIN
   #endif
 
   #if HAS_HOME
