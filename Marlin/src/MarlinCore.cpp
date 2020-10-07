@@ -538,7 +538,6 @@ inline void manage_inactivity(const bool ignore_stepper_queue=false) {
     }
   #endif
   
-
 #if HAS_MKSPWC30 // MKS PWC 3.0 Power button switch (and USB power jumper enabled).
     static int customCount1 = 0;
     const int MKSPWC30_DELAY = 2000;
