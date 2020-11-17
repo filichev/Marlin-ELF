@@ -85,6 +85,10 @@
 #define E1_STEP_PIN                         PA6
 #define E1_DIR_PIN                          PA1
 
+#define E2_ENABLE_PIN                       PA8
+#define E2_STEP_PIN                         PA9
+#define E2_DIR_PIN                          PA10
+
 //
 // Temperature Sensors
 //
